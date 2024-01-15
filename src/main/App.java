@@ -10,9 +10,12 @@ public class App {
             num = random.nextInt(60) + 1;
 
             for(j=0; j<lottery.length; j++) {
-                if(num == lottery[j] && j != i) num = random.nextInt(60) + 1;
-                else lottery[i] = num;
+                while(num == lottery[j]){
+                    num = random.nextInt(60) + 1;
+                }
             }
+
+            lottery[i] = num;
         }
 
         for(i=0; i<lottery.length; i++){
@@ -28,8 +31,5 @@ public class App {
         for(i=0; i<lottery.length; i++){
             System.out.print(lottery[i] + "   ");
         }
-
     }
-
-
 }
